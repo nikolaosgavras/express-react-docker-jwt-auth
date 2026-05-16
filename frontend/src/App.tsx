@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router";
 import { AppLayout } from "./components/AppLayout";
 import { DashboardPage } from "./pages/DashboardPage";
 import { LoginPage } from "./pages/LoginPage";
-
 function App() {
   return (
     <>

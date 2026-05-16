@@ -5,7 +5,7 @@ import pool from "../db.js"; // for connection pool
 import { authenticateToken } from "../middleware/auth.js";
 
 const router = Router()
-const JWT_SECRET = 'secret';
+const JWT_SECRET = process.env.JWT_SECRET as string;
 
 router.post('/login', async (req, res) => {
   const { user_email, password } = req.body;
@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "lax",
       maxAge: 3600000
     });
